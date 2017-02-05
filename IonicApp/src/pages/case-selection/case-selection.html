@@ -1,0 +1,37 @@
+﻿<ion-header>
+    <ion-navbar>
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title>Lupa-asian valinta</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <!-- {{ conntype }} -->
+    <h3>Valitse lupa-asia:</h3>
+    <ion-list>
+    <ion-item class="lupa">
+        <span><img src="assets/img/map.png" width="100px" /></span>
+        <span>
+            <b>{{ caseName1 }}</b><br/>
+            732-416-55-3<br/>
+            Latokuja 4, 36420 SAHALAHTI <br />
+            <button ion-button (click)="selectCase('1')" id="start_case_1">Aloita kuuleminen</button>
+            <button ion-button (click)="info('1')" id="info_case_1">Lisätiedot</button>
+        </span>
+    </ion-item>
+
+    <ion-item class="lupa">
+        <span><img src="assets/img/map.png" width="100px" /></span>
+        <span>
+            <b>{{ caseName2 }}</b><br/>
+            732-416-55-5<br/>
+            Latokuja 9, 36420 SAHALAHTI <br />
+            <button ion-button (click)="selectCase('2')" id="start_case_2">Aloita kuuleminen</button>
+            <button ion-button (click)="info('2')" id="info_case_2">Lisätiedot</button>
+        </span>
+    </ion-item>
+    </ion-list>
+
+</ion-content>

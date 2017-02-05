@@ -1,0 +1,50 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>Tunnistautumisasetukset</ion-title>
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <ion-list>
+        <p>Valitse kuultava listasta tai kirjoita tiedot kenttiin</p>
+        <ion-item>
+            <ion-select [(ngModel)]="selectedHearee" (ionChange)="heareeSelected()">
+                <ion-option value="{{hearee._id}}" *ngFor="let hearee of unheardHearees">{{hearee.firstName}} {{hearee.lastName}}</ion-option>
+            </ion-select>
+        </ion-item>
+        <ion-item>
+            <ion-label floating color="primary">Kuultavan etunimi</ion-label>
+            <ion-input type="text" id="firstNameInput" [(ngModel)]="heareeFirstName"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label floating color="primary">Kuultavan sukunimi</ion-label>
+            <ion-input type="text" id="lastNameInput" [(ngModel)]="heareeLastName"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label floating color="primary">Kuultavan osoite</ion-label>
+            <ion-input type="text" id="addressInput" [(ngModel)]="heareeAddr"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label>Minulla on huomautettavaa lupa-anomuksesta</ion-label>
+            <ion-checkbox [(ngModel)]="hasNotes"></ion-checkbox>
+        </ion-item>
+        <ion-item *ngIf="hasNotes">
+            <ion-label floating>Kirjaa tähän lupa-asiaan liittyvät huomautukset:</ion-label>
+            <ion-textarea [(ngModel)]="notes"></ion-textarea>
+        </ion-item>
+    </ion-list>
+    
+    <h3>Allekirjoitustapa</h3>
+   
+        <button class="itemi" (click)="methodSelected('signature')" id="signatureButton">
+            <span class="lupicon-big lupicon-pen"></span><span>Allekirjoitus</span>
+        </button>
+        <br /><br />
+        <button class="itemi" (click)="methodSelected('photo')" id="photoButton">
+            <span class="lupicon-big lupicon-phone"></span><span>Valokuva</span>
+        </button>
+ 
+</ion-content>

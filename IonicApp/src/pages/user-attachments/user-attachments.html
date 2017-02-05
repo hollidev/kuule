@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Omat liitteet</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+  
+  <div *ngFor="let attachment of attachments; let i = index">
+    <img src="{{attachment}}" /> <br/>
+    <button ion-button (click)="deleteAttachment(i)">Poista</button>
+  </div>
+  <br/>
+  <br/>
+  <br/>
+
+  <div><button ion-button (click)="addAttachment()">Lisää liite</button></div>
+</ion-content>

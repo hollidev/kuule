@@ -1,0 +1,88 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>Rakennusluvan tiedot</ion-title>
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <h3>HAKEMUKSEN TIEDOT</h3>
+
+    <section>
+        <article>
+            <details *ngFor="let item of items" open class="detailblock">
+                <summary>
+                    <span  class="lupicon-big {{item.icon}}"></span>
+                    <span>{{item.title}}</span>
+                </summary>
+
+                <div *ngFor="let item of item.data | keys:{args:null}" class="itemsection">
+                    <div class="section">{{ item.key }}</div>
+                    <div *ngFor="let sub of item.value | keys:{args:null}">
+                    <span *ngIf="sub.value" class="subitem">
+                        <div class="itemname">{{ sub.key }}</div>
+                        <div class="itemvalue">{{ sub.value }}</div>
+                    </span>
+                    </div>
+                </div>
+                <hr>
+            </details>
+        </article>
+    </section>
+
+    <p>&nbsp;</p>
+
+
+    <h3>SUUNNITELMA JA LIITTEET</h3>
+    <!--
+    <button [ngClass]="{'shown': item.shown }" class="itemi" *ngFor="let item of attachments" (click)="itemTapped($event, item)">
+        <span class="lupicon-big {{item.icon}}"></span>
+        <span>{{item.title}}</span>
+    </button>
+    -->
+    <section>
+        <article>
+            <details open>
+                <summary>
+                    <span class="lupicon-big lupicon-documents"></span>
+                    <span>Liitteet</span>
+                </summary>
+
+                <div class="sliderButtons">
+                    <div *ngIf="!attachmentsFirst" class="prevButton" (click)="prevSlide('attachments')"><span class="lupicon-slider lupicon-chevron-left"></span></div>
+                    <div *ngIf="!attachmentsLast" class="nextButton" (click)="nextSlide('attachments')"><span class="lupicon-slider lupicon-chevron-right"></span></div>
+                </div>
+                <ion-slides #attachmentSlider (ionDidChange)="onSlideChanged()" [options]="{pager:true}">
+                    <ion-slide *ngFor="let attachment of attachments">
+                        <h1>{{attachment.title}}</h1>
+                        <img src="{{attachment.url}}" *ngIf="!attachment.icon">
+                        <img src="assets/icon/pdf-scaled.png" (click)="openUrl(attachment.url)" *ngIf="attachment.icon"/>
+                    </ion-slide>
+                </ion-slides>
+            </details>
+            <details open *ngIf="localAttachments.length > 0">
+                <summary>
+                    <span class="lupicon-big-darkblue lupicon-documents"></span>
+                    <span>Omat liitteet</span>
+                </summary>
+                <div class="sliderButtons">
+                    <div *ngIf="!localFirst" class="prevButton" (click)="prevSlide('locals')"><span class="lupicon-slider lupicon-chevron-left"></span></div>
+                    <div *ngIf="!localLast" class="nextButton" (click)="nextSlide('locals')"><span class="lupicon-slider lupicon-chevron-right"></span></div>
+                </div>
+
+                <ion-slides #localAttachmentSlider (ionDidChange)="onSlideChanged()" [options]="{pager:true, prevButton: '.lupicon-documents', nextButton: 'lupicon-documents'}">
+                    <ion-slide *ngFor="let attachment of localAttachments;">
+                        <img src = "{{attachment}}"/>
+                    </ion-slide>
+                </ion-slides>
+            </details>
+        </article>
+    </section>
+    <br/>
+
+    <button button-block ion-button id="continueButton" (click)="nextView()">Allekirjoita</button>
+
+    <button button-block ion-button id="emailButton" (click)="sposti()">Sähköposti</button><!-- DEBUG disabled -->
+</ion-content>

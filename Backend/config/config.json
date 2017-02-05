@@ -1,0 +1,8 @@
+{
+  "apiPort": 32868,
+  "appPort": 32858,
+  "apiDevPort": 4000,
+  "appDevPort": 3000,
+  "apiAddress": "http://holli.kapsi.fi",
+  "debug": false
+}

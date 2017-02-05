@@ -1,0 +1,72 @@
+extends ../public/_bootstrap
+
+append styles
+    +bootswatch("united")
+    link(href='./stylesheets/theme.css', rel='stylesheet')
+    title=title
+
+block body
+    +navbar-fixed("API")
+
+    .container
+        .row
+            .col-lg-16
+                h1 The API at /api
+                h3 POST /send-email
+                ul
+                    li='"emailAddress": string'
+                    li='"hearee": object'
+                p Response: 200 - OK, 400 - not OK
+
+                h3 GET /case-data/:id
+                p Response: 200 - OK, latokuja JSON
+
+                h3 GET /case-data/:id/hearees
+                p Response: 200 - OK, latokuja hearees
+
+                h3 Model hearee
+                ul
+                    li='"firstName": string'
+                    li='"lastName": string'
+                    li='"address": string'
+                    li='"heard": bool'
+                    li='"caseId": string'
+
+                h3 POST /login
+                ul
+                    li='"username": string'
+                    li='"password": string'
+                p Response: 200 - OK, 401 - not OK
+
+                h3 POST /logout
+                ul
+                    li='"username": string'
+                    li='"password": string'
+                p Response: 200 - OK, 401 - not OK
+
+                h3 POST /user
+                ul
+                    li='"username": string'
+                    li='"password": string'
+                p Response: 200 - OK, 400 - not OK
+
+                h3 POST /verification-data
+                ul
+                    li='"hearee": object'
+                    li='"method": string'
+                    li='"comments": string'
+                    li='"data": object'
+                    li='"caseId": string'
+                p Response: 200 - OK, 400 - not OK
+
+                h3 GET /verification-data
+                p Response: returns all verifications
+
+                h3 GET /verification-data/{case-id}
+                p Response: returns given verification
+
+
+
+
+
+

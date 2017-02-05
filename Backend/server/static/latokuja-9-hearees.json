@@ -1,0 +1,44 @@
+[
+  {
+    "firstName": "Pirita",
+    "lastName": "Peipponen",
+    "address": "Latokuja 1",
+    "heard": false,
+    "caseId": "demo"
+  },
+  {
+    "firstName": "Teppo",
+    "lastName": "Tulppu",
+    "address": "Latokuja 2",
+    "heard": true,
+    "caseId": "demo"
+  },
+  {
+    "firstName": "Samuel",
+    "lastName": "Hirvi",
+    "address": "Latokuja 4 B",
+    "heard": false,
+    "caseId": "demo"
+  },
+  {
+    "firstName": "Mirva",
+    "lastName": "Javanainen",
+    "address": "Tienhaara 1",
+    "heard": false,
+    "caseId": "demo"
+  },
+  {
+    "firstName": "Keijo",
+    "lastName": "Kilolasi",
+    "address": "Latokuja 3",
+    "heard": false,
+    "caseId": "demo"
+  },
+  {
+    "firstName": "Kaisa",
+    "lastName": "Kilolasi",
+    "address": "Latokuja 3",
+    "heard": false,
+    "caseId": "demo"
+  }
+]

@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Lupapiste - Kuule</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <div class="kielivalinta"><a (click)="changeLanguage()"> FI </a>| EN</div>
+  <div class="keskita">
+    <p>&nbsp;</p>
+    <img src="assets/icon/lupapiste.svg" width="120px" />
+    <p>&nbsp;</p>
+    <h1>Kuule</h1>
+    <p>&nbsp;</p>
+    <ion-list>
+      <ion-item>
+        <ion-label floating>Username</ion-label>
+        <ion-input type="text" name="username"></ion-input><br/>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>Password</ion-label>
+        <ion-input type="password" name="password"></ion-input><br />
+      </ion-item>
+    </ion-list>
+    <button ion-button (click)="login()" id="login">Login</button>
+  </div>
+</ion-content>

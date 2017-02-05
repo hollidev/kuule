@@ -1,0 +1,48 @@
+﻿<ion-header>
+    <ion-navbar>
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title>Lupa-asia</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <div class="lupa">
+        <span>
+            <h3>TIEDOT</h3>
+
+            <span class="lupa-asia-otsikko">{{ caseName }}</span><span class="lupicon-small lupicon-pen" (click)="changeName()"> Muokkaa</span><br/>
+            <span class="lupa-asia-otsikko">Asiointitunnus:</span> 732-416-55-3<br/>
+            <span class="lupa-asia-otsikko">Osoite:</span> Latokuja 4, 36420 SAHALAHTI <br />
+            <span class="lupa-asia-otsikko">Kiinteistötunnus:</span> 732-416-55-3<br />
+            <span class="lupa-asia-otsikko">Tila:</span> Täydennettävänä<br />
+            <span class="lupa-asia-otsikko">Muut toimenpiteet:</span> Ei toimenpiteitä<br />
+            <div class ="kuvaus">
+            <span class="lupa-asia-otsikko">Kuvaus:</span> Uuden varaston rakentaminen, saunan, autotallin tai muun talousrakennuksen rakentaminen<br/>
+            </div>
+            <p><img src="assets/img/map.png" width="200px" /></p>
+
+            <h3>KUULTAVAT</h3>
+            <b>Kuultu:</b><br/>
+            <div *ngFor="let hearee of heardHearees">
+                {{hearee.firstName}} {{hearee.lastName}}, {{hearee.address}}<span class="lupicon-small lupicon-check"></span>
+            </div>
+            <br/>
+            <b>Kuulematta:</b><br/>
+            <div *ngFor="let hearee of unheardHearees">
+                {{hearee.firstName}} {{hearee.lastName}}, {{hearee.address}}
+            </div>
+            <br/>
+            <h3 *ngIf="notes != {}">HUOMAUTUKSET</h3>
+                <div *ngFor="let note of notes | keys:{args:null}"><strong>{{note.key}}</strong>: {{note.value}}</div>
+            <button ion-button (click)="present('1')" id="presentButton">Aloita kuuleminen</button>
+            <button ion-button (click)="userAttachments()" id="attachmentsButton">Hallitse omia liitteitä ({{attachmentCount}} kpl)</button>
+
+        </span>
+
+    </div>
+
+
+
+</ion-content>

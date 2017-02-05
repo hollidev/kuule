@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Sähköposti</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+ <p>Haluan tutustua tähän hankkeeseen myöhemmin, lähetä linkki hankkeeseen tutustumista ja allekirjoittamista varten.</p>
+
+  <ion-list>
+    <ion-item>
+      <ion-label floating color="primary">Etunimi</ion-label>
+      <ion-input id="firstNameInput" type="text" [(ngModel)]="heareeFirstName"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating color="primary">Sukunimi</ion-label>
+      <ion-input id="lastNameInput" type="text" [(ngModel)]="heareeLastName"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating color="primary">Katuosoite</ion-label>
+      <ion-input id="addressInput" type="text" [(ngModel)]="heareeAddr"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating color="primary">Sähköpostiosoite</ion-label>
+      <ion-input id="emailInput" type="email" [(ngModel)]="heareeEmail"></ion-input>
+    </ion-item>
+  </ion-list>
+
+  <button ion-button (click)="sendForm()" id="sendButton">Lähetä</button>
+</ion-content>

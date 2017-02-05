@@ -1,0 +1,26 @@
+<!--
+  Generated template for the CameraVerification page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Valokuva-allekirjoitus</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <div *ngIf="b64image" class="preview">
+        <img src="{{ b64image }}" />
+    </div>
+    <div *ngIf="error" class="error">
+        Virhe kuvan ottamisessa ({{ error }})
+    </div>
+    <div *ngIf="!error">
+    <button ion-button (click)="uploadVerification()">Lähetä</button>
+    </div>
+</ion-content>

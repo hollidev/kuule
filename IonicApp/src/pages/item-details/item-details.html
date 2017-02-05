@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-navbar>
+    <button menuToggle *ngIf="!selectedItem">
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>{{selectedItem.title}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <div *ngFor="let item of itemData | keys:{args:null}">
+     <div class="section">{{ item.key }}</div>
+     <div *ngFor="let sub of item.value | keys:{args:null}">
+         <div class="itemname">{{ sub.key }}</div>
+         <div class="itemvalue">{{ sub.value }}</div>
+     </div>
+ </div>
+
+ <div *ngIf="prevItem" class="prev"><button button-block ion-button (click)="bottomNav($event, prevItem)">EDELLINEN</button></div>
+ <div *ngIf="nextItem" class="next"><button button-block ion-button (click)="bottomNav($evnet, nextItem)">SEURAAVA</button></div>
+</ion-content>

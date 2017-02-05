@@ -1,0 +1,16 @@
+<ion-header>
+    <ion-navbar>
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title>Tunnistautuminen</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <p>
+        Minä {{heareeFirstName}} {{heareeLastName}} täten tunnistaudun ja myönnän tulleeni kuulluksi.
+    </p>
+    <div id="canvasDiv" style="border: 1px solid black;"></div>
+    <button ion-button (click)="uploadVerification()" id="sendButton">Lähetä</button>
+</ion-content>

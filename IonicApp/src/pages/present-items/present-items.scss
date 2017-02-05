@@ -1,0 +1,49 @@
+.present-items-page {
+
+    p {
+        margin: 20px 0;
+        line-height: 22px;
+        font-size: 16px;
+    }
+
+    .nextButton {
+        display: block;
+    }
+
+}
+.shown {
+    background-color: #AAFFAA !important;
+}
+/*
+.itemsection {
+    margin-top: 10px;
+    margin-bottom: 5px;
+    display:block;
+    clear: both;
+}*/
+
+.detailblock {
+    margin-bottom: 10px;
+    display:block;
+    clear: both;
+}
+.subitem {
+    clear: both;
+    display:block;
+}
+
+.sliderbuttons {
+    margin: 10px 10px 10px 10px;
+    width: 100%;
+}
+
+.prevButton {
+    float: left;
+    display:flex;
+    align-items: center;
+}
+.nextButton {
+    float: right;
+    display:flex;
+    align-items: center;
+}

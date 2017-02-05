@@ -1,0 +1,20 @@
+extends ../public/_bootstrap
+
+append styles
+    +bootswatch("united")
+    link(href='../../stylesheets/theme.css', rel='stylesheet')
+    title=title
+
+block body
+    +navbar-fixed("Lupapistos")
+
+    .container
+        .row
+            .col-lg-16
+
+                h1 Case data
+
+                p Your neighbour wants to build a tree on their property
+
+                form(action="/case/id?token=123&heard=true", method="post")
+                    +submit-primary("I accept")
